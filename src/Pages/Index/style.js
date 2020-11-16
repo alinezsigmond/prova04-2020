@@ -3,6 +3,7 @@ import bg from '../../assets/images/bg.png'
 import Brotherline from '../../assets/fonts/Brotherline.ttf'
 
 export const Container = styled.div `
+    background-color: #000;
     background-image: url(${bg});
     background-attachment: fixed;
     background-position: left top;
@@ -13,7 +14,7 @@ export const Container = styled.div `
     }
     .content {
         padding-top: 5%;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.3);
         background-position: static;
         width: 100%;
         height: 864px;

@@ -2,8 +2,10 @@ import styled from 'styled-components'
 import bg from '../../assets/images/biobg.png'
 
 export const BioBG = styled.div `
+    background-color: #c6c6c6;
     background-image: url(${bg});
     background-attachment: fixed;
+    background-repeat: no-repeat;
     width: 100%;
     height: 900px;
     display: flex;
