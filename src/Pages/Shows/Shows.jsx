@@ -6,12 +6,12 @@ import { useState } from 'react'
 // import { TextField } from '@material-ui/core'
 
 export default function Shows() {
-    const [inputs, setInputs] = useState({ }) 
+    const [inputs, setInputs] = useState({name: '', email: '', phone: '', birthday: '', check: false }) 
     const [name] = useState("");
     const [email] = useState("");
     const [phone] = useState("");
     const [birthday] = useState("");
-    const [check] = useState(false);
+    const [check] = useState();
     const handleSubmit = (event) => {
         const registration = {
             name: name,
@@ -19,6 +19,7 @@ export default function Shows() {
             phone: phone,
             birthday: birthday,
             check: check,
+
         }
         console.log(inputs);
         event.preventDefault();
@@ -33,39 +34,36 @@ export default function Shows() {
             <Header />
             <ContentStyle>
                 <Forms>
-                    {/* <form noValidate autoComplete="off">
-                        <TextField id="outlined-basic" color='primary' label="Nome" variant="outlined" />
-                    </form> */}
                     <h1>There's a pandemic going on...</h1>
                     <h2>Sign up for our newsletter and receive updates about upcoming shows!</h2>
                     <br />
                     <form onSubmit={handleSubmit} >
                         <label>
                             Full name: <br />
-                            <input className='text' value={inputs.name} onChange={handleInputChange} type="text"/>
+                            <input className='text' type="text" name="name" value={inputs.name} onChange={handleInputChange} />
                         </label>
                         <br />
                         <br />
                         <label>
                             Email address: <br />
-                            <input className='text' value={inputs.email} onChange={handleInputChange} type="text" />
+                            <input className='text' type="text" name="email" value={inputs.email} onChange={handleInputChange} />
                         </label>
                         <br />
                         <br />
                         <label>
                             Phone number: <br />
-                            <input className='text' value={inputs.phone} onChange={handleInputChange} type="text" />
+                            <input className='text' type="text" name="phone" value={inputs.phone} onChange={handleInputChange} />
                         </label>
                         <br />
                         <br />
                         <label>
                             Birth date: <br />
-                            <input className='text' value={inputs.birthday} onChange={handleInputChange} type="text" />
+                            <input className='text' type="text" name="birthday" value={inputs.birthday} onChange={handleInputChange} />
                         </label>
                         <br />
                         <br />
                         <label>
-                            <input type="checkbox" value={inputs.check} onChange={handleInputChange} />
+                            <input type="checkbox" name="check" value={inputs.check} onChange={handleInputChange} />
                                I agree to receive news on my email    
                         </label>
                         <br />
