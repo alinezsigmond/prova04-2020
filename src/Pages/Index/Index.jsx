@@ -13,13 +13,14 @@ export default function Index() {
         width: '40%',
         height: 540,
       };
+    console.log(listAlbums[4])
     return (
         <>
             <Header />
             <Container>
                 <div className='content'>
                     <h1>Releases</h1>
-                    <Table />
+                    <Table albums={albums} />
                     <h1>Listen now on Spotify</h1>
                     <SpotifyPlayer
                         uri="spotify:playlist:37i9dQZF1DZ06evO49Xies"

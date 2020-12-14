@@ -10,7 +10,7 @@ const useStyles = makeStyles({
   table: {
     minWidth: 650,
     width: 700,
-    backgroundColor: '#151515',
+    backgroundColor: 'rgba(20, 20, 20, 0.7)',
     margin: 'auto',
   },
   cell: {
@@ -18,35 +18,26 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, year, album) {
-  return { id, year, album };
-}
-
-const rows = [
-  createData(1, 2015, 'First Comes the Night'),
-  createData(2, 2009, 'Mr. Lucky'),
-];
-
-export default function DenseTable() {
+export default function DenseTable( {albums} ) {
   const classes = useStyles();
 
   return (
     <Table className={classes.table} size="medium">
     <TableHead>
         <TableRow>
-        <TableCell className={classes.cell} >Year</TableCell>
-        <TableCell className={classes.cell} align="right">Album</TableCell>
+        <TableCell className={classes.cell}> <strong>Album</strong></TableCell>
+        <TableCell className={classes.cell} align="right"><strong>Year</strong></TableCell>
         </TableRow>
     </TableHead>
     <TableBody>
-        {rows.map((row) => (
-        <TableRow key={row.id}>
-            <TableCell className={classes.cell} component="th" scope="row">
-            {row.year}
-            </TableCell>
-            <TableCell className={classes.cell} align="right">{row.album}</TableCell>
-        </TableRow>
-        ))}
+      {albums.map((row) => (
+      <TableRow key={row.id}>
+          <TableCell className={classes.cell} component="th" scope="row">
+          {row.Album}
+          </TableCell>
+          <TableCell className={classes.cell} align="right">{row.Year}</TableCell>
+      </TableRow>
+      ))}
     </TableBody>
     </Table>
   );
