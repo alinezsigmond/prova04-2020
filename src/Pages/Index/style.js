@@ -17,7 +17,8 @@ export const Container = styled.div `
         background-color: rgba(0, 0, 0, 0.3);
         background-position: static;
         width: 100%;
-        height: 864px;
+        height: 100%;
+        padding-bottom: 5%;
         margin-left: auto;
         margin-right: auto;
         text-align: center;

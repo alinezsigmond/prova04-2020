@@ -26,13 +26,13 @@ export const Content = styled.div `
 `
 export const Contact = styled.div `
     font-size: 0.8rem;
-    width: 10%;
+    width: 15%;
     display: flex;
     flex-direction: column;
     text-align: right;
 `
 export const Socials = styled.div `
-    width: 10%;
+    width: 15%;
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
