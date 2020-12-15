@@ -11,7 +11,7 @@ export default function Shows() {
     const [email] = useState("");
     const [phone] = useState("");
     const [birthday] = useState("");
-    const [check] = useState();
+    const [check, setCheck] = useState(false);
     const handleSubmit = (event) => {
         const registration = {
             name: name,
@@ -19,15 +19,18 @@ export default function Shows() {
             phone: phone,
             birthday: birthday,
             check: check,
-
         }
         console.log(inputs);
         event.preventDefault();
     }
+    const handleCheck = (event) => {
+        console.log(check);
+        setCheck(!check);
+    }
     const handleInputChange = (event) => {
         const name = event.target.name; 
         const value = event.target.value; 
-        setInputs({...inputs, [name]:value}) 
+        setInputs({...inputs, [name]:value});
     }
     return (
         <>
@@ -63,7 +66,7 @@ export default function Shows() {
                         <br />
                         <br />
                         <label>
-                            <input type="checkbox" name="check" value={inputs.check} onChange={handleInputChange} />
+                            <input type="checkbox" name="check" value={inputs.check} onChange={handleCheck} />
                                I agree to receive news on my email    
                         </label>
                         <br />

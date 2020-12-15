@@ -28,4 +28,13 @@ export const Container = styled.div `
         font-family: 'Brotherline';
         font-size: 5rem;
     }
+    Button {
+        margin: auto;
+        background-color: #1ed760;
+        display: flex;
+        align-self: center;
+        :hover {
+            background-color: #1db954;
+        }
+    }
 `
